@@ -1,0 +1,16 @@
+{% extends "commonCode.html" %}
+{% block start %}
+    <div class="add_emp_Container">
+    <h1>Search Employee</h1>
+    <hr><br>
+    <form method="POST" action="{% url 'filter_emp' %}">
+        {% csrf_token %} 
+        First Name/Last Name: <input type="text" id="name" name="name" value="{{name}}"><br><br>
+        Department: <input type="text" id="department" name="department" value="{{dept}}"><br><br>
+        Role: <input type="text" id="role" name="role" value="{{role}}"><br><br>
+        <button class="filter_emp_button">Submit</button>
+    </form> 
+    <br><br>
+    <a href="{% url 'index' %}">Home</a>
+    </div>
+{% endblock %}

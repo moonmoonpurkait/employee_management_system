@@ -1,0 +1,36 @@
+{% extends "commonCode.html" %}
+{% block start %}
+    <div class="all_emp_container">
+    <h1>View All Employee Details</h1>
+    <hr><br>
+    <h2>Employee Details</h2><br>
+    <table class="table_all_emp" >
+        <tr>
+            <th>Employee Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Depertment</th>
+            <th>Role</th>
+            <th>Salary</th>
+            <th>Bonus</th>
+            <th>Phone No</th>
+            <th>Hire Date</th>
+        </tr>
+        {% for emp in allemp %}
+        <tr>
+            <td>{{emp.id}}</td>
+            <td>{{emp.first_name}}</td>
+            <td>{{emp.last_name}}</td>
+            <td>{{emp.dept.name}}</td>
+            <td>{{emp.role.name}}</td> 
+            <td>{{emp.salary}}</td>
+            <td>{{emp.bonus}}</td>
+            <td>{{emp.phone_no}}</td>
+            <td>{{emp.hire_date}}</td>
+        </tr>
+        {% endfor %}
+    </table>   
+    <br><br>
+    <a href="{% url 'index' %}">Home</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "commonCode.html" %}
+{% block start %}
+<div class="add_emp_Container">
+    <h1>Add Employee</h1>
+    <hr><br>
+    <form method="POST" action="{% url 'add_emp' %}">
+        {% csrf_token %}
+        First name: <input type="text" id="first_name" name="first_name" value="First name"><br><br>
+        Last name: <input type="text" id="last_name" name="last_name" value="last name"><br><br>
+        Department: <input type="number" id="department" name="department"  placeholder="Enter department no" value="{{dept}}"><br><br>
+        Role: <input type="number" id="role" name="role" placeholder="Enter role no" value="{{role}}"><br><br>
+        Salary: <input type="number" id="salary" name="salary" value=0><br><br>
+        Bonus: <input type="number" id="bonus" name="bonus" value=0><br><br>
+        Phone no: <input type="text" id="phone_no" name="phone_no" value=0><br><br>
+        <button class="add_emp_button">Submit</button>
+    </form>
+    <br><br>
+    <a href="{% url 'index' %}">Home</a>
+</div>
+{% endblock %}

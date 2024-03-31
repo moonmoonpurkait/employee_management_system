@@ -1,0 +1,27 @@
+{% extends "commonCode.html" %}
+{% block start %}
+
+<div class="remove_emp_Container">
+    <h1>Remove Employee</h1>
+    <hr><br>
+    <!-- <div class="dropdown">
+        <button>Choose Employee To Remove</button>
+        <ul class="dropdown-options">
+            {% for emp in allemp %}
+            <li><a href="/remove_emp/">{{emp.first_name}} {{emp.last_name}}</a><br></li>
+            {% endfor %}
+        </ul>
+    </div> -->
+
+    <div class="dropdown">
+        <button class="dropbtn"> Choose Employee To Remove</button>
+        <div class="dropdown-content">
+            {% for emp in allemp %}
+                <a href="/remove_emp/{{emp.id}}"> {{emp.first_name}} {{emp.last_name}} </a>
+            {% endfor %}
+        </div>
+    </div>
+    <br><br>
+    <a href="{% url 'index' %}">Home</a>
+</div>
+{% endblock %}
